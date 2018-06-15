@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using WpfTestApp.Models;
@@ -33,13 +35,29 @@ namespace WpfTestApp.ViewModels
         public MainWindowViewModel()
         {
             InitData();
-            EditGridCommand = new RelayCommand(ClickMeEvent);
-            TestList.CollectionChanged += TestList_CollectionChanged; ;
+            InitEvents();
+            InitCommands(); 
         }
 
-        public void ClickMeEvent()
+        private void InitCommands()
         {
-            MessageBox.Show("BOOM");
+            EditGridCommand = new RelayCommand(RowEndEvent);
+        }
+
+        private void InitEvents()
+        {
+            TestList.CollectionChanged += TestList_CollectionChanged;
+        }
+        #endregion
+
+        public void RowEndEvent()
+        {
+            MessageBox.Show("Row Editing Has Ended" + String.Join(",",TestList.Select(x => x.Value)));
+        }
+
+        public void PropWasChanged(object s, PropertyChangedEventArgs e)
+        {
+
         }
 
         private void TestList_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -63,7 +81,12 @@ namespace WpfTestApp.ViewModels
                 new TestModel() { Name = "testname1", Value = "testvalue1" },
                 new TestModel() { Name = "testname2", Value = "testvalue2" },
             };
+
+            foreach(var model in _testList)
+            {
+                model.PropertyChanged += (s, e) => { PropWasChanged(s,e); };
+            }
         }
-        #endregion
+        
     }
 }
