@@ -1,0 +1,15 @@
+D:\Code\WPF\WpfTestApp\WpfTestApp\bin\Debug\WpfTestApp.exe.config
+D:\Code\WPF\WpfTestApp\WpfTestApp\bin\Debug\WpfTestApp.exe
+D:\Code\WPF\WpfTestApp\WpfTestApp\bin\Debug\WpfTestApp.pdb
+D:\Code\WPF\WpfTestApp\WpfTestApp\obj\Debug\MainWindow.g.cs
+D:\Code\WPF\WpfTestApp\WpfTestApp\obj\Debug\App.g.cs
+D:\Code\WPF\WpfTestApp\WpfTestApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Code\WPF\WpfTestApp\WpfTestApp\obj\Debug\WpfTestApp_MarkupCompile.cache
+D:\Code\WPF\WpfTestApp\WpfTestApp\obj\Debug\WpfTestApp_MarkupCompile.lref
+D:\Code\WPF\WpfTestApp\WpfTestApp\obj\Debug\MainWindow.baml
+D:\Code\WPF\WpfTestApp\WpfTestApp\obj\Debug\WpfTestApp.g.resources
+D:\Code\WPF\WpfTestApp\WpfTestApp\obj\Debug\WpfTestApp.Properties.Resources.resources
+D:\Code\WPF\WpfTestApp\WpfTestApp\obj\Debug\WpfTestApp.csproj.GenerateResource.cache
+D:\Code\WPF\WpfTestApp\WpfTestApp\obj\Debug\WpfTestApp.csproj.CoreCompileInputs.cache
+D:\Code\WPF\WpfTestApp\WpfTestApp\obj\Debug\WpfTestApp.exe
+D:\Code\WPF\WpfTestApp\WpfTestApp\obj\Debug\WpfTestApp.pdb
