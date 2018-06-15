@@ -1,7 +1,10 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Command;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows;
+using System.Windows.Input;
 using WpfTestApp.Models;
 
 namespace WpfTestApp.ViewModels
@@ -11,6 +14,8 @@ namespace WpfTestApp.ViewModels
         private ObservableCollection<TestModel> _testList;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public ICommand EditGridCommand { get; set; }
 
         public ObservableCollection<TestModel> TestList
         {
@@ -28,13 +33,21 @@ namespace WpfTestApp.ViewModels
         public MainWindowViewModel()
         {
             InitData();
+            EditGridCommand = new RelayCommand(ClickMeEvent);
             TestList.CollectionChanged += TestList_CollectionChanged; ;
+        }
+
+        public void ClickMeEvent()
+        {
+            MessageBox.Show("BOOM");
         }
 
         private void TestList_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             
         }
+
+
 
         void TestModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
